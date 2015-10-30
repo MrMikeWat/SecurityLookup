@@ -1,0 +1,41 @@
+﻿@using SecurityLookup.Models
+
+@model LookUpViewModel
+@{
+    ViewBag.Title = "Secuity Lookup";
+}
+
+@Scripts.Render("~/Scripts/MyAppScript.js")
+<link rel="stylesheet" href="~/Content/MyStyleSheet.css" />
+
+
+<div class="panel">
+        <div class="row">
+            <div class="col-md-2 ">
+                @Html.LabelFor(n => n.SecurityCode)
+
+            </div>
+            <div class="col-lg-10">
+                @Html.TextBoxFor(n => n.SecurityCode)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 ">
+                @Html.LabelFor(n => n.SearchText)
+            </div>
+            <div class="col-md-10">
+                @Html.TextBoxFor(n => n.SearchText)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="button" class="btn-info" onclick="doSearch()"  value="Search" />      
+            </div>
+        </div>
+</div>
+<div class="panel">
+    <p id="SearchResults">      
+    </p>
+</div>
+
+

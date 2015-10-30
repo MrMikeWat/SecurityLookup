@@ -1,0 +1,44 @@
+﻿@using SecurityLookup.Models
+
+@model SearchResultViewModel
+
+
+
+<table class="table table-bordered" >
+    <thead >
+        <tr class="MyTableheader">
+            <th>Security Id</th>
+            <th>Security Code</th>
+            <th>Security Name</th>
+            <th>SEDOL</th>
+            <th>CUSIP</th>
+            <th>ISIN</th>
+        </tr>
+    </thead>
+
+    @if (Model.Securities.Count > 0)
+    {
+        <tbody>
+            @foreach (Security security in Model.Securities)
+            {
+                <tr>
+                    <td>@security.SecurityId </td>
+                    <td>@security.SecurityCode</td>
+                    <td>@security.SecurityName</td>
+                    <td>@security.SEDOL</td>
+                    <td>@security.CUSIP</td>
+                    <td>@security.ISIN</td>
+                </tr>
+            }
+        </tbody>
+    }
+    else
+    {
+        <tbody>
+            <tr></tr>
+            <tr>
+                <td>No information/entries found for the search values.</td> 
+            </tr>
+        </tbody>
+    }
+</table>
