@@ -5,10 +5,11 @@
     $.ajax({
         url: "/SecurityLookUp/Search",
         type: "GET",
-        data: {SecurityCode: code, SearchText: srcText }
+        data: { SecurityCode: code, SearchText: srcText },
+        success: function(partialViewResult) { $("#SearchResults").html(partialViewResult)}
     })
-        .done(function (partialViewResult) {
-            $("#SearchResults").html(partialViewResult);
-        });
+        //.done(function (partialViewResult) {
+        //    $("#SearchResults").html(partialViewResult);
+        //});
 
 }
